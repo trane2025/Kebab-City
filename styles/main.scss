@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "Primary-font";
+    font-display: swap;
+    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-Bold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: "Primary-font";
+    font-display: swap;
+    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-BoldItalic.woff") format("woff");
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Primary-font";
+    font-display: swap;
+    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Primary-font";
+    font-display: swap;
+    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Primary-font";
+    font-display: swap;
+    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-Italic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Secondary-font";
+    font-display: swap;
+    src:  local("Secondary-font"), url("/fonts/opensans.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Secondary-font";
+    font-display: swap;
+    src:  local("Secondary-font"), url("/fonts/opensansbold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Secondary-font";
+    font-display: swap;
+    src:  local("Secondary-font"), url("/fonts/opensanssemibold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Secondary-font";
+    font-display: swap;
+    src:  local("Secondary-font"), url("/fonts/opensansextrabold.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+
+
+
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+  }
+
+
+  p {
+    font-family: 'Secondary-font';
+    font-size: 16px;
+    color: #b7b7b7;
+  }
+
+  
+
+  h1, h2,h3,h4 {
+    font-family: 'Primary-font';
+    font-weight: 400;
+    color: #ffffff;
+  }
+
+  h2 {
+        font-size: 48px;
+        color: white;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+    }
+
+  h1 {
+    font-size: 60px;
+    letter-spacing: 0.01em;
+  }
+
+  h3 {
+      font-size: 36px;
+      letter-spacing: 0.01em;
+  }
+
+  h4 {
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+
+  a {
+    font-family: 'Secondary-font';
+    font-weight: 600;
+    font-size: 16px;
+    color: #d4d4d4;
+  }
+  
+  // body {
+  //   background: url('/images/background/back.jpg') repeat-y center center;
+  // }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  @keyframes fade{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%
+    }
+}
