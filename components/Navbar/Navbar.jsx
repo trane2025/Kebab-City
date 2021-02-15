@@ -19,8 +19,8 @@ function Navbar({ links, route, toggleBasketHandler, countProducts, animate }) {
                             <div className="wraper-Geolocation-text">
                                 <img src="/images/icons/geolocation.png" alt="geolocation" />
                                 <div>
-                                    <p className='adres'>ул.Славянская 20</p>
-                                    <p className='phone'>+7 (8512) 777 999</p>
+                                    <p className='adres'>ул. Медногорская, 121</p>
+                                    <p className='phone'>+7 (8512) 41-42-42</p>
                                 </div>
                             </div>
 
@@ -41,7 +41,7 @@ function Navbar({ links, route, toggleBasketHandler, countProducts, animate }) {
                                 <img src="/images/icons/geolocation.png" alt="geolocation" />
                                 <div>
                                     <p className='adres'>ул.Славянская 20</p>
-                                    <p className='phone'>+7 (8512) 777 999</p>
+                                    <p className='phone'>+7 (8512) 42-28-22</p>
                                 </div>
                             </div>
 

@@ -17,7 +17,7 @@ function Contacts() {
                     </WraperContact>
                     <WraperContact>
                         <img src="/images/icons/phone.png" alt="icon" />
-                        <p>+7 (8512) 777 999</p>
+                        <p>+7 (8512) 42-28-22</p>
                     </WraperContact>
                     <hr />
                     <WraperContact>
@@ -26,7 +26,7 @@ function Contacts() {
                     </WraperContact>
                     <WraperContact>
                         <img src="/images/icons/phone.png" alt="icon" />
-                        <p>+7 (8512) 777 999</p>
+                        <p>+7 (8512) 41-42-42</p>
                     </WraperContact>
                     <WraperLinks>
                         <a target='_blank' href='https://yandex.ru/maps/?um=constructor%3A625558781eb151d6a95220764072d9f7d556052ae1eb4ee4a2c2adcd7f17167f&source=constructorLink'>Посмотреть в яндексе</a>
