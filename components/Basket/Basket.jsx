@@ -18,41 +18,41 @@ function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, 
                 </i>
             </WraperTitle>
 
-            {!!Object.keys(products).length && Object.keys(products).map(key => {
-                const product = products[key];
-                const priceProduct = product.price * product.selectedPortion / product.portion;
-                return (
-                    <Product key={product.key}>
-                        <i onClick={() => deleteProduct(product.key)}>
-                            <svg
-                                width="17px" height="17px">
-                                <path fillRule="evenodd" fill="rgb(154, 154, 158)"
-                                    d="M2.429,16.994 L0.002,14.568 L6.074,8.499 L-0.002,2.427 L2.423,0.003 L8.499,6.075 L14.571,0.006 L16.998,2.432 L10.926,8.501 L17.000,14.572 L14.575,16.996 L8.501,10.925 L2.429,16.994 Z" />
-                            </svg>
-                        </i>
-                        <WraperImage>
-                            <img src={product.picture} alt="foto-product" />
-                        </WraperImage>
-                        <ul>
-                            <li>
-                                <p>{product.title}</p>
-                            </li>
-                            <li>
-                                <Count
-                                    countPortion={product.selectedPortion}
-                                    unit={product.unit}
-                                    removeCountPortion={() => removeCountPortion(product)}
-                                    addCountPortion={() => addCountPortion(product)} />
-                            </li>
-                            <li>
-                                <p className='price'>{`${product.selectedPrice} руб`}</p>
-                            </li>
-                        </ul>
-                    </Product>
-                )
-            })}
+            <ContainerProduct>
+                {!!Object.keys(products).length && Object.keys(products).map(key => {
+                    const product = products[key];
+                    return (
+                        <Product key={product.key}>
+                            <i onClick={() => deleteProduct(product.key)}>
+                                <svg
+                                    width="17px" height="17px">
+                                    <path fillRule="evenodd" fill="rgb(154, 154, 158)"
+                                        d="M2.429,16.994 L0.002,14.568 L6.074,8.499 L-0.002,2.427 L2.423,0.003 L8.499,6.075 L14.571,0.006 L16.998,2.432 L10.926,8.501 L17.000,14.572 L14.575,16.996 L8.501,10.925 L2.429,16.994 Z" />
+                                </svg>
+                            </i>
+                            <WraperImage>
+                                <img src={product.picture} alt="foto-product" />
+                            </WraperImage>
+                            <ul>
+                                <li>
+                                    <p>{product.title}</p>
+                                </li>
+                                <li>
+                                    <Count
+                                        countPortion={product.selectedPortion}
+                                        unit={product.unit}
+                                        removeCountPortion={() => removeCountPortion(product)}
+                                        addCountPortion={() => addCountPortion(product)} />
+                                </li>
+                                <li>
+                                    <p className='price'>{`${product.selectedPrice} руб`}</p>
+                                </li>
+                            </ul>
+                        </Product>
+                    )
+                })}
 
-
+            </ContainerProduct>
 
             {!!Object.keys(products).length ?
                 <WraperAllPrice>
@@ -74,6 +74,8 @@ export default Basket;
 
 const NoneProducts = styled.div`
     text-align: center;
+    padding: 30px 15px;
+    background: #1d1d25;
 `;
 
 const WraperAllPrice = styled.div`
@@ -99,6 +101,11 @@ const WraperImage = styled.div`
         max-height: 80px;
         width: auto;
     }
+`;
+
+const ContainerProduct = styled.div`
+    overflow-y: scroll;
+    max-height: 400px;
 `;
 
 const Product = styled.div`
@@ -155,7 +162,7 @@ const BasketWraper = styled.div`
     height: 100%;
     background: rgb(15, 15, 19);
     z-index: 100;
-    box-shadow: -13px 0px 21.84px 2.16px rgb(6 6 6 / 86%);
+    box-shadow: ${({ open }) => open ? '-13px 0px 21.84px 2.16px rgb(6 6 6 / 86%)' : 'none'};;
     padding: 60px 40px;
     user-select: none;
 

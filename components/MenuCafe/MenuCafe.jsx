@@ -15,11 +15,11 @@ function MenuCafe({ links, products, title }) {
                         <ul>
                             {links.map(link => {
                                 return (
-                                    <li key={link.id + link.title}>
+                                    <LinkMain key={link.id + link.title} active={title === link.title}>
                                         <Link href={`/menu-cafe/${link.url}`}>
                                             <a>{link.title}</a>
                                         </Link>
-                                    </li>
+                                    </LinkMain>
                                 )
                             })}
 
@@ -43,6 +43,28 @@ function MenuCafe({ links, products, title }) {
 
 export default MenuCafe;
 
+const LinkMain = styled.li`
+    
+    max-width: 250px;
+
+    a {
+        font-size: 20px;
+        color: ${props => props.active ? '#1c2024' : '#c2c2c2'};
+        font-weight: ${props => props.active ? '800' : '400'};
+        padding-left: 20px;
+        display: block;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        clip-path: polygon(0% 0%, 96% 0, 100% 50%, 96% 100%, 0% 100%);
+        background-color: ${props => props.active ? ' rgb(252, 198, 92);' : 'none'};
+        
+
+        :hover {
+            color: ${props => props.active ? '#1c2024' : 'white'}; 
+        }
+    }
+`;
+
 const Shop = styled.ul`
     display: flex;
     flex-wrap: wrap;
@@ -63,6 +85,7 @@ const ShopWrap = styled.div`
 const Background = styled.section`
     background: url('/images/MenuPage/background.jpg') repeat-y center top;
     position: relative;
+    background-color: #1d1d25;
 `;
 
 const Wraper = styled.section`
@@ -74,19 +97,17 @@ const Main = styled.main`
     max-width: 270px;
     min-width: 270px;
     margin-right: 30px;
+    background-color: #1d1d25;
 
-    li {
-        margin: 18px 0;
+    h2 {
+        position: sticky;
+        top: 80px;
+        margin-bottom: 30px;
     }
 
-    a {
-        font-weight: 400;
-        font-size: 18px;
-        color: #c1c1c7;
-
-        :hover {
-            color: white;
-        }
+    ul {
+        position: sticky;
+        top: 160px;
     }
 `;
 

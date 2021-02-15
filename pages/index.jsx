@@ -28,4 +28,5 @@ export default index;
 
 const Background = styled.div`
     background: url('/images/background/back.jpg') repeat-y center center;
+    background-color: #101114;
 `;

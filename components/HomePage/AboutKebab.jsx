@@ -6,7 +6,7 @@ import Button from '../UI/ButtonLink';
 const slides = [
     { href: '/images/about-kebab/image1.jpg' },
     { href: 'https://eda.yandex/images/1380157/39625e140ebb0bff476372085b5da8cb-1100x825.jpg' },
-    { href: 'http://peoplesrest.ru/media/images/store/food/33/06/33063a85be738b0192976a325e812e30.jpg' },
+    { href: 'https://stroydesign24.ru/pics/shashlik-v-tandire-otzivi.jpg' },
 ]
 
 function AboutKebab() {

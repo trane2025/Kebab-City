@@ -1,14 +1,17 @@
-import { useState } from "react";
-import { connect } from "react-redux";
+import { useEffect, useRef, useState } from "react";
 import { rootAPI } from "../Api/rootApi";
 import Layout from "../components/layout/Layout";
 import MenuCafe from "../components/MenuCafe/MenuCafe";
-import basket, { basketToggle } from "../store/redusers/basket";
+import Prelouder from "../components/UI/Prelouder";
 
 
 function menuCafe({ res, countProducts }) {
+    const count = useRef(true);
 
-    const title = 'Заказать шашлык в Астрахани'
+    const title = 'Заказать шашлык в Астрахани';
+
+
+
 
 
     return (

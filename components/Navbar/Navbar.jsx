@@ -11,7 +11,7 @@ import Link from 'next/link';
 function Navbar({ links, route, toggleBasketHandler, countProducts, animate }) {
 
     return (
-        <section>
+        <>
             <Top>
                 <Container>
                     <div className="wraper-top">
@@ -53,7 +53,7 @@ function Navbar({ links, route, toggleBasketHandler, countProducts, animate }) {
                 <Container>
                     <ul>
                         <BasketIcon onClick={() => toggleBasketHandler(true)} className={animate}>
-                            <img src="/images/icons/basket-icon.png" alt="basket" />
+                            <img src="/images/icons/backet-icon.svg" alt="basket" />
                             {!!countProducts &&
                                 <div className="count-basket-products">
                                     <p>{countProducts}</p>
@@ -73,7 +73,7 @@ function Navbar({ links, route, toggleBasketHandler, countProducts, animate }) {
                     </ul>
                 </Container>
             </Bottom>
-        </section>
+        </>
     )
 }
 
@@ -82,14 +82,14 @@ export default Navbar;
 
 const BasketIcon = styled.div`
     position: absolute;
-    top: -5px;
+    top: 0px;
     right: 0px;
     cursor: pointer;
     z-index: 10;
 
     img {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
 
     .count-basket-products {
@@ -98,8 +98,8 @@ const BasketIcon = styled.div`
         width: 35px;
         height: 35px;
         position: absolute;
-        right: -5px;
-        bottom: -8px;
+        right: -8px;
+        bottom: -12px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -136,6 +136,8 @@ const LinkWrap = styled.li`
 const Top = styled.div`
     background: #0f0f13;
     padding: 10px 0;
+    position: relative;
+    z-index: 11;
 
     .wraper-top {
         display: flex;
@@ -176,8 +178,10 @@ const WraperGeolocation = styled.div`
 `;
 
 const Bottom = styled.div`
-    background: #1a1a21;
-
+    background: #17171d;
+    position: sticky;
+    top: 0;
+    z-index: 11;
     
 
     ul {
