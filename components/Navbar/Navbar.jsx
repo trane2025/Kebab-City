@@ -18,7 +18,10 @@ function Navbar({ links, route, toggleBasketHandler, countProducts, animate }) {
                         <WraperGeolocation left={true}>
                             <div className="wraper-Geolocation-text">
                                 <img src="/images/icons/geolocation.png" alt="geolocation" />
-                                <p>ул.Славянская 20</p>
+                                <div>
+                                    <p className='adres'>ул.Славянская 20</p>
+                                    <p className='phone'>+7 (8512) 777 999</p>
+                                </div>
                             </div>
 
                             <i>
@@ -36,7 +39,10 @@ function Navbar({ links, route, toggleBasketHandler, countProducts, animate }) {
                         <WraperGeolocation>
                             <div className="wraper-Geolocation-text">
                                 <img src="/images/icons/geolocation.png" alt="geolocation" />
-                                <p>ул.Славянская 20</p>
+                                <div>
+                                    <p className='adres'>ул.Славянская 20</p>
+                                    <p className='phone'>+7 (8512) 777 999</p>
+                                </div>
                             </div>
 
                             <i>
@@ -169,10 +175,16 @@ const WraperGeolocation = styled.div`
 
         p {
             font-family: 'Secondary-font';
+            font-weight: 400;
+            font-size: 16px;
+            color: rgb(218, 218, 218);
+            line-height: 1.6;
+        }
+
+        .phone {
             font-weight: 800;
             font-size: 18px;
-            color: rgb(255, 254, 254);
-            line-height: 3.333;
+            color: white;
         }
     }
 `;

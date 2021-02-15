@@ -26,9 +26,8 @@ function Footer({ links, route }) {
                             })}
                         </LeftWrapBottom>
                     </LeftWrap>
-                    <RightWrap>
-                        <img src="/images/logo/BZCEH.png" alt="лого" />
-                        <p>Разработка “Бизнес цех”</p>
+                    <RightWrap target='_blank' href='https://bzcekh.ru/'>
+                        <img src="/images/logo/logo-footer.svg" alt="лого" />
                     </RightWrap>
                 </Section>
             </Container>
@@ -64,6 +63,7 @@ const BackgroundSection = styled.section`
 const Section = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 `;
 
 const LeftWrapTop = styled.div`
@@ -82,13 +82,8 @@ const LeftWrap = styled.div`
 
 
 
-const RightWrap = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-
-    p {
-        margin-top: 30px;
+const RightWrap = styled.a`
+    img {
+        
     }
 `;

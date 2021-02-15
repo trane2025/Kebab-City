@@ -20,9 +20,8 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
 <linearGradient id="paint0_linear" x1="0" y1="100" x2="0" y2="0" gradientUnits="userSpaceOnUse">
-<stop stop-color="#A66B04"/>
-<stop offset="0.5" stop-color="#FDA833"/>
-<stop offset="1" stop-color="#F4D7A9"/>
+<stop stop-color="#E2B619"/>
+<stop offset="1" stop-color="#F8E1BE"/>
 </linearGradient>
 </defs>
 </svg>

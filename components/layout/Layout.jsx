@@ -51,7 +51,7 @@ function Layout({ children, title = 'Kebab-city', description, basketToggle, cou
                 <title>{`${title}`}</title>
                 <meta name="description" content={description} />
                 <meta charSet="utf-8" />
-                <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></link>
+                <link rel="shortcut icon" href="/favicon.png" type="image/x-icon"></link>
             </Head>
             <BasketContainer />
             <Navbar

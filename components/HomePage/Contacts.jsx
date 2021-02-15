@@ -7,7 +7,7 @@ function Contacts() {
             <h2>Контактная <span>информация</span></h2>
             <Wraper>
                 <Left>
-                    <img src="/images/Contacts/Geolocation.png" alt="geolocation" />
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A625558781eb151d6a95220764072d9f7d556052ae1eb4ee4a2c2adcd7f17167f&amp;source=constructor" width="670" height="450" frameBorder="0"></iframe>
                 </Left>
                 <Right>
                     <h3>Ждем Вас в гости</h3>
@@ -29,7 +29,7 @@ function Contacts() {
                         <p>+7 (8512) 777 999</p>
                     </WraperContact>
                     <WraperLinks>
-                        <a target='_blank' href='https://yandex.ru/maps/?um=constructor%3Ad0279d8ac96cf3dec4afadd9d2e8d47ba0205fe4b09642625f517362e33ecbfb&source=constructorLink'>Посмотреть в яндексе</a>
+                        <a target='_blank' href='https://yandex.ru/maps/?um=constructor%3A625558781eb151d6a95220764072d9f7d556052ae1eb4ee4a2c2adcd7f17167f&source=constructorLink'>Посмотреть в яндексе</a>
                         <div>
                             <img src="/images/icons/instagram.svg" alt="social" />
                             <img src="/images/icons/Ok.svg" alt="social" />
@@ -61,7 +61,11 @@ const Wraper = styled.div`
 `;
 
 const Left = styled.div`
-    
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const WraperContact = styled.div`

@@ -23,19 +23,12 @@ function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, 
                     const product = products[key];
                     return (
                         <Product key={product.key}>
-                            <i onClick={() => deleteProduct(product.key)}>
-                                <svg
-                                    width="17px" height="17px">
-                                    <path fillRule="evenodd" fill="rgb(154, 154, 158)"
-                                        d="M2.429,16.994 L0.002,14.568 L6.074,8.499 L-0.002,2.427 L2.423,0.003 L8.499,6.075 L14.571,0.006 L16.998,2.432 L10.926,8.501 L17.000,14.572 L14.575,16.996 L8.501,10.925 L2.429,16.994 Z" />
-                                </svg>
-                            </i>
                             <WraperImage>
                                 <img src={product.picture} alt="foto-product" />
                             </WraperImage>
                             <ul>
                                 <li>
-                                    <p>{product.title}</p>
+                                    <p className='title-product'>{product.title}</p>
                                 </li>
                                 <li>
                                     <Count
@@ -48,6 +41,9 @@ function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, 
                                     <p className='price'>{`${product.selectedPrice} руб`}</p>
                                 </li>
                             </ul>
+                            <i onClick={() => deleteProduct(product.key)}>
+                                <img src="/images/icons/delete.svg" alt="delete" />
+                            </i>
                         </Product>
                     )
                 })}
@@ -91,6 +87,7 @@ const WraperAllPrice = styled.div`
 
 const WraperImage = styled.div`
     width: 100px;
+    min-width: 100px;
     height: 80px;
     overflow: hidden;
     display: flex;
@@ -113,31 +110,34 @@ const Product = styled.div`
     display: flex;
     align-items: center;
     background: #1d1d25;
-    padding: 15px;
+    padding: 12px;
     margin: 15px 0;
 
     i {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        cursor: pointer;
+       cursor: pointer; 
     }
 
     ul {
         display: flex;
         align-items: center;
-        margin-left: 15px;
+        margin-left: 12px;
     }
 
     li {
-        padding: 15px;
+        padding: 12px;
     }
 
-    p {
-        font-weight: 800;
-        font-size: 18px;
-        color: white;
+    .title-product {
+        
+        font-size: 16px;
+        color: #dbdbdb;
         width: 120px;
+    }
+
+    .price {
+        color: white;
+        width: 100px;
+        font-weight: 600;
     }
 `;
 
