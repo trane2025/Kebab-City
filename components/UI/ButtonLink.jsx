@@ -28,11 +28,16 @@ const Shadow = styled.div`
     top: 5px;
     width: 300px;
     height: 70px;
-    background: #424242;
+    background: linear-gradient(0deg, #e2b319 0%, #F8E1BE 100%);
     z-index: 1;
     border-radius: 60px;
     box-shadow: 0px 20px 20px rgb(5 10 16);
     transition-duration: .2s;
+
+    @media (max-width: 1250px) {
+        width: 230px;
+        height: 50px;
+    } 
 `;
 
 const Wraper = styled.div`   
@@ -57,7 +62,11 @@ const Wraper = styled.div`
     }
 
     
-        
+    @media (max-width: 1250px) {
+        width: 260px;
+        height: 69px;
+        background-size: contain;
+    }    
     
 `;
 
@@ -86,5 +95,10 @@ const Container = styled.div`
         }
         
     }
-    
+
+
+     @media (max-width: 1250px) {
+        max-width: 260px;
+        margin-top: 20px;
+    } 
 `;

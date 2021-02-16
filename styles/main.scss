@@ -1,78 +1,3 @@
-@font-face {
-    font-family: "Primary-font";
-    font-display: swap;
-    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-Bold.woff") format("woff");
-    font-weight: 800;
-    font-style: normal;
-  }
-
-
-  @font-face {
-    font-family: "Primary-font";
-    font-display: swap;
-    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-BoldItalic.woff") format("woff");
-    font-weight: 800;
-    font-style: italic;
-  }
-
-  @font-face {
-    font-family: "Primary-font";
-    font-display: swap;
-    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-SemiBold.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Primary-font";
-    font-display: swap;
-    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-Regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Primary-font";
-    font-display: swap;
-    src:  local("Primary-font"), url("/fonts/BerlingskeSerif-Italic.woff") format("woff");
-    font-weight: 400;
-    font-style: italic;
-  }
-
-  @font-face {
-    font-family: "Secondary-font";
-    font-display: swap;
-    src:  local("Secondary-font"), url("/fonts/opensans.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Secondary-font";
-    font-display: swap;
-    src:  local("Secondary-font"), url("/fonts/opensansbold.woff") format("woff");
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Secondary-font";
-    font-display: swap;
-    src:  local("Secondary-font"), url("/fonts/opensanssemibold.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Secondary-font";
-    font-display: swap;
-    src:  local("Secondary-font"), url("/fonts/opensansextrabold.woff") format("woff");
-    font-weight: 900;
-    font-style: normal;
-  }
-
-
-
 
 
   *{
@@ -148,6 +73,65 @@
   ::-webkit-scrollbar-thumb {
   background: rgb(72, 69, 80);
   
+  }
+
+  @media (max-width: 1250px) {
+    h2 {
+      font-size: 36px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+  }
+  
+  @media (max-width: 1000px) {
+
+    h1 {
+      font-size: 36px;
+    }
+
+
+    h2 {
+      font-size: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 28px;
+    }
+
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
   }
 
   @keyframes fade{

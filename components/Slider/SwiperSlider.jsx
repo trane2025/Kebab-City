@@ -57,6 +57,10 @@ const Slider = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 760px) {
+        display: none;
+    }
 `;
 
 const ImageWraper = styled.div`
@@ -69,7 +73,28 @@ const ImageWraper = styled.div`
     
     img {
       max-height: auto;
-      width: 670px;
       max-width: 670px;  
     }
+
+    @media (max-width: 1250px) {
+        max-width: 500px;
+        height: 320px;
+
+        img {
+            max-width: 500px;  
+        }
+    } 
+
+    @media (max-width: 1000px) {
+        width: auto;
+        height: 320px;
+        margin-bottom: 30px;
+
+        img {
+            height: auto;
+            width: auto;
+        }
+    }
+
+    
 `;

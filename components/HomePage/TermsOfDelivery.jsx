@@ -40,24 +40,40 @@ const Section = styled.div`
     h2 {
         text-align: center;
     }
+
+    @media (max-width: 1250px){
+        margin-bottom: 100px;
+    }
+
+    @media (max-width: 1000px){
+        margin-bottom: 60px;
+    }
 `;
 
 const Wraper = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
+
+    @media (max-width: 760px) {
+        margin-top: 15px;
+    }
 `;
 
 const WrapLeft = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: calc(44% - 15px);
+
+    @media (max-width: 760px) {
+        width: 100%;
+    }
 `;
 
 const CardLeft = styled.div`
     border-radius: 10px;
     background-color: rgb(29, 29, 37);
-    width: 500px;
     height: 250px;
     position: relative;
     padding: 30px;
@@ -93,17 +109,30 @@ const CardLeft = styled.div`
     p {
         width: 245px;
     }
+
+    @media (max-width: 760px) {
+        margin: 10px 0;
+    }
 `;
 
 const WrapRight = styled.div`  
     border-radius: 10px;
     background-color: rgb(29, 29, 37);
-    width: 645px;
     height: 520px;
     position: relative;
+    width: calc(56% - 15px);
 
     img {
         position: absolute;
         top: 0;
+    }
+
+    @media (max-width: 1250px){
+        width: calc(57% - 15px);
+        overflow: hidden;
+    }
+
+    @media (max-width: 760px) {
+        display: none;
     }
 `;

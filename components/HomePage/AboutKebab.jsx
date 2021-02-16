@@ -15,7 +15,6 @@ function AboutKebab() {
 
     return (
         <Section>
-
             <Left>
                 <h2>Шашлык <span>на тандыре</span></h2>
                 <SwiperSlider slides={slides} />
@@ -37,7 +36,19 @@ export default AboutKebab;
 const Section = styled.section`
     display: flex;
     justify-content: space-between;
+    
     margin-bottom: 150px;
+
+    @media (max-width: 1250px) {
+        margin-bottom: 100px;
+        align-items: center;
+    } 
+
+    @media (max-width: 1000px) {
+       flex-direction: column;
+       margin-bottom: 50px;
+
+    } 
 `;
 
 const Left = styled.div`
@@ -50,13 +61,32 @@ const Left = styled.div`
         font-weight: 800;
         font-style: italic;
     }
+
+    @media (max-width: 1250px) {
+        justify-content: flex-start;
+        h2 {
+            margin-bottom: 30px;
+        }
+    } 
+
+    @media (max-width: 1000px) {
+        align-items: center;
+
+    } 
+
+    @media (max-width: 760px) {
+        align-items: center;
+        h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    } 
 `;
 
 const Right = styled.div`
     border-radius: 10px;
     background-color: rgb(29, 29, 37);
-    width: 471px;
-    height: 536px;
+    padding: 30px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +103,37 @@ const Right = styled.div`
     p {
         width: 380px;
         line-height: 1.875;
+    }
+
+    @media (max-width: 1250px) {
+        padding: 30px 30px;
+        p {
+            width: 300px;
+            font-size: 14px;
+        }
+    } 
+
+    @media (max-width: 1000px) {
+        padding: 30px 30px;
+        p {
+            width: 500px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 760px) {
+        
+        p {
+            width: auto;
+            font-size: 14px;
+        }
+
+        h3 {
+        width: auto;
+        text-align: center;
+        margin-bottom: 20px;
+        
+    }
     }
 
 `;

@@ -54,6 +54,14 @@ const Section = styled.section`
     h2 {
         text-align: center;
     }
+
+    @media (max-width: 1250px) {
+        margin-bottom: 100px;
+    }
+
+    @media (max-width: 1000px) {
+        margin-bottom: 60px;
+    }
 `;
 
 const ContainerWraper = styled.div`
@@ -61,10 +69,22 @@ const ContainerWraper = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
+
+    @media (max-width: 760px) {
+        display: block;
+        margin-top: 15px;
+    }
 `;
 
 const WraperLeft = styled.div`
     
+    @media (max-width: 1250px) {
+        width: calc(50% - 15px);
+    }
+
+    @media (max-width: 760px) {
+        width: 100%;
+    }
 `;
 
 const LeftCardBottom = styled.div`
@@ -90,6 +110,13 @@ const LeftCardBottom = styled.div`
         bottom: 0;
         right: 0;
     }
+
+
+    @media (max-width: 1250px) {
+        width: 100%;
+    }
+
+
 `;
 
 const LeftCardTop = styled.div`
@@ -116,16 +143,20 @@ const LeftCardTop = styled.div`
         bottom: 0;
         right: -5px;
     }
+
+    @media (max-width: 1250px) {
+        width: 100%;
+    }
 `;
 
 const WraperCenter = styled.div`
+    @media (max-width: 1250px) {
+        width: calc(50% - 15px);
+    }
 
-
-    .center-card__bottom {
-        border-radius: 10px;
-        background-color: rgb(29, 29, 37);
-        
-        
+    @media (max-width: 760px) {
+        width: 100%;
+        margin-top: 20px;
     }
 `;
 
@@ -153,6 +184,10 @@ const CenterCardTop = styled.div`
         bottom: 0;
         right: 20px;
     }
+
+    @media (max-width: 1250px) {
+        width: 100%;
+    }
 `;
 
 const CenterCardBottom = styled.div`
@@ -178,6 +213,12 @@ const CenterCardBottom = styled.div`
         bottom: 0;
         right: -14px;
     }
+
+    @media (max-width: 1250px) {
+        width: 100%;
+    }
+
+    
 `;
 
 const WraperRight = styled.div`
@@ -192,6 +233,11 @@ const WraperRight = styled.div`
         position: absolute;
         bottom: 0;
         right: -17px;
+    }
+
+    @media (max-width: 1250px) {
+        display: none;
+
     }
 
 `;

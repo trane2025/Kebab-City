@@ -40,7 +40,7 @@ export default Footer;
 
 const LinkWrap = styled.li`
     
-    margin: 0 36px 0 0;
+    
 
     a {
             font-family: 'Secondary-font';
@@ -51,6 +51,10 @@ const LinkWrap = styled.li`
         :hover {
             color: #f7c77e;
         }
+    }
+
+    @media (max-width: 1000px) {
+        margin: 10px 0;
     }
     
 `;
@@ -64,6 +68,10 @@ const Section = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
+    @media (max-width: 480px) {
+        display: block;
+    }
 `;
 
 const LeftWrapTop = styled.div`
@@ -72,6 +80,10 @@ const LeftWrapTop = styled.div`
 
 const LeftWrapBottom = styled.ul`
     display: flex;
+
+    @media (max-width: 1000px) {
+        display: block;
+    }
 `;
 
 const LeftWrap = styled.div`
@@ -84,6 +96,6 @@ const LeftWrap = styled.div`
 
 const RightWrap = styled.a`
     img {
-        
+        margin-top: 10px;
     }
 `;

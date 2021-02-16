@@ -118,6 +118,10 @@ const BasketIcon = styled.div`
         }
 
     }
+
+    @media ( max-width: 1000) {
+        display: none;
+    }
 `;
 
 const LinkWrap = styled.li`
@@ -155,6 +159,17 @@ const Top = styled.div`
         position: relative;
         top: 10px;
     }
+
+    @media (max-width: 1000px) {
+        .wraper-top {
+            justify-content: flex-start;
+        }
+
+        .logo-kebab {
+        margin-right: 30px;
+    }
+        
+    }
 `;
 
 
@@ -187,10 +202,22 @@ const WraperGeolocation = styled.div`
             color: white;
         }
     }
+
+    @media (max-width: 1250px){
+        i {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1000px){
+        
+        display: none;
+    
+    }
 `;
 
 const Bottom = styled.div`
-    background: #17171d;
+    background: #19191f;
     position: sticky;
     top: 0;
     z-index: 11;
@@ -201,5 +228,11 @@ const Bottom = styled.div`
         padding: 18px;
         justify-content: center;
         position: relative;
+    }
+
+    @media (max-width: 1000px){
+        
+        display: none;
+    
     }
 `;

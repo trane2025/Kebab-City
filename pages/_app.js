@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { useStore } from '../store/store';
 import '../styles/main.scss';
 import '../styles/animate.scss';
+import '../styles/fonts.scss';
 import 'swiper/swiper.scss';
 import NextNprogress from 'nextjs-progressbar';
 

@@ -23,23 +23,14 @@ export default Button;
 
 
 
-const Shadow = styled.div`
-    position: absolute;
-    top: 5px;
-    width: 200px;
-    height: 50px;
-    background: #424242;
-    z-index: 1;
-    border-radius: 60px;
-    box-shadow: 0px 10px 20px rgb(5 10 16);
-    transition-duration: .2s;
-`;
+
 
 const Wraper = styled.div`   
     width: 220px;
     height: 60px;
     border: none;
     background: url('/images/banner/button.png') no-repeat center center;
+    
     background-size: contain;
     font-family: 'Secondary-font';
     font-weight: 900;
@@ -60,6 +51,18 @@ const Wraper = styled.div`
     
         
     
+`;
+
+const Shadow = styled.div`
+    position: absolute;
+    top: 5px;
+    width: 200px;
+    height: 46px;
+    background: linear-gradient(0deg, #e2b319 0%, #F8E1BE 100%);
+    z-index: 1;
+    border-radius: 60px;
+    box-shadow: 0px 10px 20px rgb(5 10 16);
+    transition-duration: .2s;
 `;
 
 const Container = styled.div`
