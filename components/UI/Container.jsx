@@ -28,8 +28,4 @@ const ContainerStyle = styled.div`
   @media (max-width: 760px) {
     width: calc(100% - 30px);
   }
-
-  @media (max-width: 480px) {
-    width: 320px;
-  }
 `;
