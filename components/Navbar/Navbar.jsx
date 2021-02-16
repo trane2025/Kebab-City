@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from '../UI/Container';
 import Link from 'next/link';
+import ButtonMobileNav from '../UI/ButtonMobileNav';
+import NavbarMobile from './NavbarMobile';
 
 
 
@@ -10,9 +12,13 @@ import Link from 'next/link';
 
 function Navbar({ links, route, toggleBasketHandler, countProducts, animate }) {
 
+    const [activeBtn, setActiveBtn] = useState(false);
+
     return (
         <>
             <Top>
+                <NavbarMobile links={links} activeBtn={activeBtn} setActiveBtn={setActiveBtn} route={route} />
+                <ButtonMobileNav activeBtn={activeBtn} setActiveBtn={setActiveBtn} />
                 <Container>
                     <div className="wraper-top">
                         <WraperGeolocation left={true}>
@@ -153,6 +159,7 @@ const Top = styled.div`
         display: flex;
         justify-content: space-around;
         align-items: center;
+        position: relative;
     }
 
     .logo-kebab {

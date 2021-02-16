@@ -22,7 +22,7 @@ const ContainerStyle = styled.div`
   }
 
   @media (max-width: 1000px) {
-    width: calc(100% - 30px);
+    width: 780px;
   }
   
   @media (max-width: 760px) {
