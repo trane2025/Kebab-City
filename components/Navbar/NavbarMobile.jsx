@@ -6,7 +6,6 @@ function NavbarMobile({ links, route, activeBtn, setActiveBtn }) {
         <Section active={activeBtn}>
             <ul>
                 {links.map((link, index) => {
-                    console.log(link.href);
                     return (
                         <LinkWraps key={index} active={route === link.href} onClick={() => setActiveBtn(false)}>
                             <Link href={link.href}>
@@ -22,16 +21,16 @@ function NavbarMobile({ links, route, activeBtn, setActiveBtn }) {
                 <div className="wraper-Geolocation-text">
                     <img src="/images/icons/geolocation.png" alt="geolocation" />
                     <div>
+                        <p className='phone'>42-28-22</p>
                         <p className='adres'>ул.Славянская 20</p>
-                        <p className='phone'>+7 (8512) 42-28-22</p>
                     </div>
                 </div>
 
                 <div className="wraper-Geolocation-text">
                     <img src="/images/icons/geolocation.png" alt="geolocation" />
                     <div>
+                        <p className='phone'>41-42-42</p>
                         <p className='adres'>ул. Медногорская, 121</p>
-                        <p className='phone'>+7 (8512) 41-42-42</p>
                     </div>
                 </div>
             </WraperGeolocation>
@@ -82,7 +81,7 @@ const LinkWraps = styled.li`
 const WraperGeolocation = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: ${props => props.left ? 'flex-end' : 'flex-start'};
+    align-items: flex-start;
     width: fit-content;
 
     .wraper-Geolocation-text {

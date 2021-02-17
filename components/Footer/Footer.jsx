@@ -39,7 +39,7 @@ function Footer({ links, route }) {
 export default Footer;
 
 const LinkWrap = styled.li`
-    
+    margin: 0 10px;
     
 
     a {

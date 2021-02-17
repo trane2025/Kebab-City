@@ -21,7 +21,7 @@ function Contacts() {
                                 </WraperContact>
                                 <WraperContact>
                                     <img src="/images/icons/phone.png" alt="icon" />
-                                    <p>+7 (8512) 42-28-22</p>
+                                    <p>42-28-22</p>
                                 </WraperContact>
                             </div>
 
@@ -33,7 +33,7 @@ function Contacts() {
                                 </WraperContact>
                                 <WraperContact>
                                     <img src="/images/icons/phone.png" alt="icon" />
-                                    <p>+7 (8512) 41-42-42</p>
+                                    <p>41-42-42</p>
                                 </WraperContact>
                             </div>
                         </div>

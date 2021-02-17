@@ -3,6 +3,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { useMemo } from 'react';
 import basket from './redusers/basket';
+import mobileMenu from './redusers/mobileMenu';
 
 
 
@@ -14,8 +15,11 @@ const initialState = {};
 
 //СЮДА СКЛАДЫВАТЬ РЕДЬЮСЕРЫ
 const reducers = combineReducers({
-    basket
+    basket,
+    mobileMenu
 })
+
+
 
 function initStore(preloadedState = initialState) {
     return createStore(

@@ -3,19 +3,29 @@ import styled from 'styled-components';
 import Container from '../UI/Container';
 import Link from 'next/link';
 import CardProductContainer from '../CardProduct/CardProductContainer';
+import { connect } from 'react-redux';
+import { toggleMobileMenu } from '../../store/redusers/mobileMenu';
 
-function MenuCafe({ links, products, title }) {
+function MenuCafe({ links, products, title, mobileMenu, toggleMobileMenu }) {
+
+
 
     return (
         <Background>
             <Container>
                 <Wraper>
-                    <Main>
+                    <Main mobileActive={mobileMenu}>
+                        <i onClick={() => toggleMobileMenu(!mobileMenu)}>
+                            <svg width="22px" height="21px">
+                                <path fillRule="evenodd" fill="rgb(255, 255, 255)"
+                                    d="M21.507,20.483 L21.453,20.535 C20.813,21.154 19.777,21.154 19.138,20.535 L11.416,13.063 L3.796,20.429 C3.163,21.041 2.137,21.041 1.504,20.429 L1.450,20.377 C0.817,19.765 0.817,18.773 1.450,18.161 L9.072,10.795 L1.774,3.733 C1.135,3.114 1.135,2.111 1.774,1.492 L1.828,1.440 C2.468,0.821 3.504,0.821 4.143,1.440 L11.443,8.503 L18.641,1.546 C19.274,0.934 20.300,0.934 20.933,1.546 L20.987,1.598 C21.620,2.209 21.620,3.201 20.987,3.813 L13.787,10.772 L21.507,18.242 C22.146,18.861 22.146,19.864 21.507,20.483 Z" />
+                            </svg>
+                        </i>
                         <h2>Меню</h2>
                         <ul>
                             {links.map(link => {
                                 return (
-                                    <LinkMain key={link.id + link.title} active={title === link.title}>
+                                    <LinkMain key={link.id + link.title} active={title === link.title} onClick={() => toggleMobileMenu(!mobileMenu)}>
                                         <Link href={`/menu-cafe/${link.url}`}>
                                             <a>{link.title}</a>
                                         </Link>
@@ -37,11 +47,20 @@ function MenuCafe({ links, products, title }) {
                     </ShopWrap>
                 </Wraper>
             </Container>
-        </Background>
+
+        </Background >
     )
 }
 
-export default MenuCafe;
+const mapStateToProps = (state) => ({
+    mobileMenu: state.mobileMenu.open
+})
+
+
+
+export default connect(mapStateToProps, { toggleMobileMenu })(MenuCafe);
+
+
 
 const LinkMain = styled.li`
     
@@ -63,6 +82,12 @@ const LinkMain = styled.li`
             color: ${props => props.active ? '#1c2024' : 'white'}; 
         }
     }
+
+    @media ( max-width: 1000px) {
+        a {
+            color: ${props => props.active ? '#1c2024' : 'white'}; 
+        }
+    }
 `;
 
 const Shop = styled.ul`
@@ -77,6 +102,15 @@ const ShopWrap = styled.div`
     h1 {
         font-size: 48px;
     }
+
+    padding: 50px 0;
+
+    @media (max-width: 760px) {
+        h1 {
+            font-size: 36px;
+        }
+        
+    }
     
 `;
 
@@ -86,18 +120,32 @@ const Background = styled.section`
     background: url('/images/MenuPage/background.jpg') repeat-y center top;
     position: relative;
     background-color: #1d1d25;
+
+    @media (max-width: 1000px) {
+        background: url('/images/background/back.jpg') repeat-y center top;
+    }
 `;
 
 const Wraper = styled.section`
     display: flex;
-    padding: 50px 0;
+    
 `;
 
 const Main = styled.main`
+    position: relative;
+    padding: 50px 0;
     max-width: 270px;
     min-width: 270px;
     margin-right: 30px;
     background-color: #1d1d25;
+
+    i {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        cursor: pointer;
+        display: none;
+    }
 
     h2 {
         position: sticky;
@@ -108,6 +156,32 @@ const Main = styled.main`
     ul {
         position: sticky;
         top: 160px;
+    }
+
+    @media (max-width: 1000px) {
+        position: fixed;
+        top: 0;
+        transition-duration: .4s;
+        left: ${({ mobileActive }) => mobileActive ? 0 : '-100%'};
+        width: 100%;
+        min-width: 100%;
+        height: 100%;
+        z-index: 20;
+        padding-left: 40px;
+
+        i {
+            display: block;
+        }
+
+        h2 {
+            position: relative;
+            top: 0;
+    }
+
+        ul {
+            position: relative;
+            top: 0;
+        }
     }
 `;
 
