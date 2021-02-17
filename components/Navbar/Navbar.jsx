@@ -87,17 +87,7 @@ function Navbar({ links, route, toggleBasketHandler, countProducts, animate, tog
                     </ul>
                 </Container>
             </Bottom>
-            <MobileMenu >
-                <button onClick={() => toggleMobileMenu(!mobileMenu)}>Меню</button>
-                <BasketIconMobile onClick={() => toggleBasketHandler(true)} className={animate}>
-                    <img src="/images/icons/backet-icon.svg" alt="basket" />
-                    {!!countProducts &&
-                        <div className="count-basket-products">
-                            <p>{countProducts}</p>
-                        </div>
-                    }
-                </BasketIconMobile>
-            </MobileMenu>
+
         </>
     )
 }
@@ -108,66 +98,7 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, { toggleMobileMenu })(Navbar);
 
-const MobileMenu = styled.div`
-    padding: 20px 30px;
-    width: 100%;
-    background: #0f0f13;
-    position: fixed;
-    bottom: 0;
-    z-index: 9;
-    display: none;
-    justify-content: space-between;
-    align-items: center;
 
-    button {
-        padding: 15px 65px;
-        font-weight: 800;
-        font-size: 14px;
-        border-radius: 30px;
-        border: none;
-        color: #1b1a20;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 3px #FFDAA5;
-        cursor: pointer;
-    }
-
-    @media (max-width: 1000px){
-        display: flex;
-    }
-`;
-
-const BasketIconMobile = styled.div`
-    width: fit-content;
-    position: relative;
-    cursor: pointer;
-    z-index: 10;
-
-    img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .count-basket-products {
-        border-radius: 50%;
-        background-color: white;
-        width: 35px;
-        height: 35px;
-        position: absolute;
-        right: -8px;
-        bottom: -12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: rgb(18 18 18 / 27%) -3.41px 3.657px 8.19px 0.81px;
-
-        p {
-            color: #1b1b1b;
-            font-weight: 800;
-            font-size: 16px;
-        }
-
-    }
-`;
 
 const BasketIcon = styled.div`
     position: absolute;
