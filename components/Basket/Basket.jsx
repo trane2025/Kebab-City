@@ -204,7 +204,7 @@ const WraperAllPrice = styled.div`
 
 const ContainerProduct = styled.div`
     overflow-y: scroll;
-    max-height: 70%;
+    max-height: 65%;
 
     @media (max-width: 1000px){
         max-height: 70%;
