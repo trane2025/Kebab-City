@@ -41,19 +41,21 @@ function MenuCafe({ links, products, title, mobileMenu, toggleMobileMenu, basket
                                         d="M21.507,20.483 L21.453,20.535 C20.813,21.154 19.777,21.154 19.138,20.535 L11.416,13.063 L3.796,20.429 C3.163,21.041 2.137,21.041 1.504,20.429 L1.450,20.377 C0.817,19.765 0.817,18.773 1.450,18.161 L9.072,10.795 L1.774,3.733 C1.135,3.114 1.135,2.111 1.774,1.492 L1.828,1.440 C2.468,0.821 3.504,0.821 4.143,1.440 L11.443,8.503 L18.641,1.546 C19.274,0.934 20.300,0.934 20.933,1.546 L20.987,1.598 C21.620,2.209 21.620,3.201 20.987,3.813 L13.787,10.772 L21.507,18.242 C22.146,18.861 22.146,19.864 21.507,20.483 Z" />
                                 </svg>
                             </i>
-                            <h2>Меню</h2>
-                            <ul>
-                                {links.map(link => {
-                                    return (
-                                        <LinkMain key={link.id + link.title} active={title === link.title} onClick={() => toggleMobileMenu(!mobileMenu)}>
-                                            <Link href={`/menu-cafe/${link.url}`}>
-                                                <a>{link.title}</a>
-                                            </Link>
-                                        </LinkMain>
-                                    )
-                                })}
+                            <div className="wraper-styki">
+                                <h2>Меню</h2>
+                                <ul>
+                                    {links.map(link => {
+                                        return (
+                                            <LinkMain key={link.id + link.title} active={title === link.title} onClick={() => toggleMobileMenu(!mobileMenu)}>
+                                                <Link href={`/menu-cafe/${link.url}`}>
+                                                    <a>{link.title}</a>
+                                                </Link>
+                                            </LinkMain>
+                                        )
+                                    })}
 
-                            </ul>
+                                </ul>
+                            </div>
                         </Main>
                         <ShopWrap>
                             <h1>{title}</h1>
@@ -242,15 +244,13 @@ const Main = styled.main`
         display: none;
     }
 
-    h2 {
+    .wraper-styki {
         position: sticky;
-        top: 80px;
-        margin-bottom: 30px;
+        top: 130px;
     }
 
-    ul {
-        position: sticky;
-        top: 160px;
+    h2 {
+        margin-bottom: 15px;
     }
 
     @media (max-width: 1000px) {
