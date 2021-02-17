@@ -184,16 +184,16 @@ const WraperAllPrice = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
+    max-height: 20%;
 
     .title-price {
         color: #f7d38c;
     }
 
     @media (max-width: 1000px){
-        margin-top: 15px;
+        margin-top: 20px;
         
         width: 100%;
-        max-height: 20%;
         height: 100%;
         -webkit-box-pack: center;
         justify-content: center;
@@ -204,7 +204,7 @@ const WraperAllPrice = styled.div`
 
 const ContainerProduct = styled.div`
     overflow-y: scroll;
-    max-height: 400px;
+    max-height: 70%;
 
     @media (max-width: 1000px){
         max-height: 70%;
