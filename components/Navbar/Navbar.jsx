@@ -12,7 +12,7 @@ import { toggleMobileMenu } from '../../store/redusers/mobileMenu';
 
 
 
-function Navbar({ links, route, toggleBasketHandler, countProducts, animate, toggleMobileMenu, mobileMenu }) {
+function Navbar({ links, route, toggleBasketHandler, countProducts, animate, basket }) {
 
     const [activeBtn, setActiveBtn] = useState(false);
 
@@ -66,14 +66,15 @@ function Navbar({ links, route, toggleBasketHandler, countProducts, animate, tog
             <Bottom>
                 <Container>
                     <ul>
-                        <BasketIcon onClick={() => toggleBasketHandler(true)} className={animate}>
-                            <img src="/images/icons/backet-icon.svg" alt="basket" />
-                            {!!countProducts &&
-                                <div className="count-basket-products">
-                                    <p>{countProducts}</p>
-                                </div>
-                            }
-                        </BasketIcon>
+                        {basket &&
+                            <BasketIcon onClick={() => toggleBasketHandler(true)} className={animate}>
+                                <img src="/images/icons/backet-icon.svg" alt="basket" />
+                                {!!countProducts &&
+                                    <div className="count-basket-products">
+                                        <p>{countProducts}</p>
+                                    </div>
+                                }
+                            </BasketIcon>}
                         {links.map((link, index) => {
                             return (
                                 <LinkWrap key={index} active={route === link.href}>

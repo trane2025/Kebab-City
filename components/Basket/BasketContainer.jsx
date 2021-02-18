@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { basketToggle, deleteProductBasket, setProductBasket } from '../../store/redusers/basket';
 import Basket from './Basket';
+import BasketOrder from './BasketOrder';
 
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -20,7 +21,7 @@ export const useUpdateEffect = (fn, deps) => {
 }
 
 
-function BasketContainer({ open, basketToggle, products, setProductBasket, deleteProductBasket, allPrice }) {
+function BasketContainer({ open, basketToggle, products, setProductBasket, deleteProductBasket, allPrice, basket }) {
 
 
 
@@ -87,17 +88,32 @@ function BasketContainer({ open, basketToggle, products, setProductBasket, delet
         }
     }
 
-    return (
-        <Basket
-            open={open}
-            basketToggle={basketToggle}
-            products={products}
-            deleteProduct={deleteProduct}
-            addCountPortion={addCountPortion}
-            removeCountPortion={removeCountPortion}
-            allPrice={allPrice}
-            numberWithSpaces={numberWithSpaces} />
-    )
+    if (basket) {
+        return (
+            <BasketOrder
+                open={open}
+                basketToggle={basketToggle}
+                products={products}
+                deleteProduct={deleteProduct}
+                addCountPortion={addCountPortion}
+                removeCountPortion={removeCountPortion}
+                allPrice={allPrice}
+                numberWithSpaces={numberWithSpaces} />
+        )
+    }
+    else {
+        return (
+            <Basket
+                open={open}
+                basketToggle={basketToggle}
+                products={products}
+                deleteProduct={deleteProduct}
+                addCountPortion={addCountPortion}
+                removeCountPortion={removeCountPortion}
+                allPrice={allPrice}
+                numberWithSpaces={numberWithSpaces} />
+        )
+    }
 }
 
 const mapStateToProps = (state) => ({

@@ -28,7 +28,7 @@ const useUpdateEffect = (fn, deps) => {
 }
 
 
-function Layout({ children, title = 'Kebab-city', description, basketToggle, countProducts }) {
+function Layout({ children, title = 'Kebab-city', description, basketToggle, countProducts, basket }) {
 
     const { route } = useRouter();
 
@@ -53,14 +53,15 @@ function Layout({ children, title = 'Kebab-city', description, basketToggle, cou
                 <meta charSet="utf-8" />
                 <link rel="shortcut icon" href="/favicon.png" type="image/x-icon"></link>
             </Head>
-            <BasketContainer />
+            {!basket && <BasketContainer />}
             <Navbar
                 links={links}
                 route={route}
                 toggleBasketHandler={toggleBasketHandler}
                 countProducts={countProducts}
                 animate={animate}
-                setAnimate={setAnimate} />
+                setAnimate={setAnimate}
+                basket={!basket} />
 
             {children}
             <Footer links={links} route={route} />

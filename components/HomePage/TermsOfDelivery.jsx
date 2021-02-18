@@ -97,7 +97,6 @@ const CardLeft = styled.div`
 
     h4 {
         width: 260px;
-        font-size: 24px;
         margin-bottom: 10px;
     }
 
@@ -112,6 +111,17 @@ const CardLeft = styled.div`
 
     @media (max-width: 760px) {
         margin: 10px 0;
+    }
+
+    @media (max-width: 400px) {
+        margin: 10px 0;
+        p {
+            width: auto;
+        }
+
+        h4 {
+            width: auto;
+        }
     }
 `;
 

@@ -21,7 +21,9 @@ function CardProduct({ picture, title, price, unit, portion, minPortion, addProd
                 </li>
 
             </ul>
-            <Button onClick={addProductBasket}>Добавить в корзину</Button>
+            <WraperButton>
+                <Button onClick={addProductBasket}>Добавить в корзину</Button>
+            </WraperButton>
         </Card >
 
 
@@ -29,6 +31,11 @@ function CardProduct({ picture, title, price, unit, portion, minPortion, addProd
 }
 
 export default CardProduct;
+
+const WraperButton = styled.div`
+    display: flex;
+    justify-content: center;
+`;
 
 const WraperImage = styled.div`
     

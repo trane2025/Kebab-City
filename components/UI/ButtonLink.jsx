@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-function Button({ children, href, top = '40px' }) {
+function Button({ children, href, top = '40px', onClick }) {
     return (
-        <Container top={top}>
+        <Container top={top} onClick={onClick}>
             <Link href={href}>
                 <a className='link-btn' >
                     <Wraper>

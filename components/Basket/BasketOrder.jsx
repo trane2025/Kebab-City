@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Button from '../UI/ButtonLink';
 import Count from '../UI/Count';
 
-function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, removeCountPortion, allPrice, numberWithSpaces }) {
+function BasketOrder({ open, basketToggle, products, deleteProduct, addCountPortion, removeCountPortion, allPrice, numberWithSpaces }) {
 
     return (
         <BasketWraper open={open}>
@@ -55,7 +55,6 @@ function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, 
             {!!Object.keys(products).length ?
                 <WraperAllPrice>
                     <h3>Сумма <span className='title-price'>{`${numberWithSpaces(allPrice)} руб.`}</span></h3>
-                    <Button href='/order' top='30px' onClick={() => basketToggle(false)}>Оформить заказ</Button>
                 </WraperAllPrice>
 
                 :
@@ -68,7 +67,7 @@ function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, 
     )
 }
 
-export default Basket;
+export default BasketOrder;
 
 const WraperPrice = styled.div`
     display: flex;
@@ -201,12 +200,23 @@ const WraperAllPrice = styled.div`
         justify-content: center;
         flex-direction: column;
         padding: 15px;
+
+        h3 {
+            font-size: 36px;
+        }
+    }
+
+    @media (max-width: 660px) {
+        margin-bottom: 20px;
+        h3 {
+            font-size: 30px;
+        }
     }
 `;
 
 const ContainerProduct = styled.div`
     overflow-y: scroll;
-    max-height: 60%;
+    max-height: 500px;
 
     @media (max-width: 1000px){
         max-height: 70%;
@@ -225,35 +235,48 @@ const WraperTitle = styled.div`
         cursor: pointer;
     }
 
+    @media (max-width: 1000px) {
+        margin-bottom: 20px;
+        h3 {
+            font-size: 36px;
+        }
+    }
+
     @media (max-width: 660px) {
         margin-bottom: 20px;
         h3 {
-            font-size: 24px;
+            font-size: 30px;
         }
     }
 `;
 
 const BasketWraper = styled.div`
     transition-duration: 0.5s;
-    position: fixed;
-    right: ${({ open }) => open ? '0' : '-650px'};
     width: 650px;
     height: 100%;
-    background: rgb(15, 15, 19);
-    z-index: 100;
-    box-shadow: ${({ open }) => open ? '-13px 0px 21.84px 2.16px rgb(6 6 6 / 86%)' : 'none'};;
+    background: rgb(15 15 19 / 62%);
     padding: 60px 40px;
     user-select: none;
 
 
-    @media (max-width: 1000px){
-        width: 100%;
+    @media (max-width: 1250px){
+        position: fixed;
+        background: rgb(15 15 19);
+        top: 0;
+        z-index: 100;
+        width: 650px;
         height: 100%;
-        right: ${({ open }) => open ? '0' : '-100%'};
+        right: ${({ open }) => open ? '0' : '-650px'};
+        box-shadow: ${({ open }) => open ? '-13px 0px 21.84px 2.16px rgb(6 6 6 / 86%)' : 'none'};;
     }
 
-    @media (max-width: 660px) {
+    @media (max-width: 1000px) {
         padding: 40px 20px;
+    }
+
+    @media (max-width: 760px){
+        width: 100%;
+        right: ${({ open }) => open ? '0' : '-100%'};
     }
 
 `;

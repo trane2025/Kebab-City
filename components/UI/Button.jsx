@@ -2,18 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-function Button({ children, top = '15px', onClick }) {
+function Button({ children, top = '15px', onClick, type }) {
     return (
-        <Container top={top} onClick={onClick}>
+        <SectionBtn>
+            <Container top={top} onClick={onClick} type={type}>
 
-            <a className='link-btn' >
-                <Wraper>
-                    <span>{children}</span>
-                </Wraper>
-            </a>
+                <a className='link-btn' >
+                    <Wraper>
+                        <span>{children}</span>
+                    </Wraper>
+                </a>
 
-            <Shadow />
-        </Container>
+                <Shadow />
+            </Container>
+        </SectionBtn>
+
 
 
     )
@@ -22,7 +25,9 @@ function Button({ children, top = '15px', onClick }) {
 export default Button;
 
 
-
+const SectionBtn = styled.div`
+    display: flex;
+`;
 
 
 const Wraper = styled.div`   
@@ -49,7 +54,10 @@ const Wraper = styled.div`
     }
 
     
-        
+    @media (max-width: 360px){
+        width: 200px;
+        height: 56px;
+    }   
     
 `;
 
@@ -63,15 +71,22 @@ const Shadow = styled.div`
     border-radius: 60px;
     box-shadow: 0px 10px 20px rgb(5 10 16);
     transition-duration: .2s;
+
+    @media (max-width: 360px){
+        width: 180px;
+        height: 40px;
+    }
 `;
 
-const Container = styled.div`
+const Container = styled.button`
     user-select: none;
     margin-top: ${({ top }) => top};
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
+    border: none;
     max-width: 320px;
 
     .link-btn {
