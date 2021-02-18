@@ -164,7 +164,7 @@ const LinkMain = styled.li`
     max-width: 250px;
 
     a {
-        font-size: 20px;
+        font-size: 18px;
         color: ${props => props.active ? '#1c2024' : '#c2c2c2'};
         font-weight: ${props => props.active ? '800' : '400'};
         padding-left: 20px;
