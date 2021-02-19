@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Button from '../UI/Button';
 import Count from '../UI/Count';
 
-function CardProduct({ picture, title, price, unit, portion, minPortion, addProductBasket, removeCountPortion, addCountPortion }) {
+function CardProduct({ picture, title, price, unit, portion, minPortion, addProductBasket, removeCountPortion, addCountPortion, volume, price_volume }) {
     return (
         <Card>
             <WraperImage>
@@ -14,11 +14,17 @@ function CardProduct({ picture, title, price, unit, portion, minPortion, addProd
                 </li>
                 <li>
                     <Count countPortion={minPortion} unit={unit} removeCountPortion={removeCountPortion} addCountPortion={addCountPortion} />
-                    <p>
-                        <span>{`Цена за ${portion} ${unit}.`}</span>
+                    <Price>
+                        <span>{`Цена за ${price_volume}`}</span>
                         {`${price} руб.`}
-                    </p>
+                    </Price>
                 </li>
+                {volume !== '' &&
+                    <li>
+                        <Volume>
+                            {volume}
+                        </Volume>
+                    </li>}
 
             </ul>
             <WraperButton>
@@ -31,6 +37,32 @@ function CardProduct({ picture, title, price, unit, portion, minPortion, addProd
 }
 
 export default CardProduct;
+
+
+
+const Volume = styled.p`
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 15px;
+    color: #6e6e6e;
+    font-style: italic;
+`;
+
+const Price = styled.p`
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    
+
+    span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #dfdfdf;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+`;
 
 const WraperButton = styled.div`
     display: flex;
@@ -88,18 +120,7 @@ const Card = styled.li`
         }
     }
 
-    p {
-        color: white;
-        font-weight: 800;
-        font-size: 20px;
-        
-
-        span {
-            font-size: 12px;
-            font-weight: 400;
-            color: #dfdfdf;
-            display: block;
-            margin-bottom: 10px;
-        }
-    }
+    
 `;
+
+

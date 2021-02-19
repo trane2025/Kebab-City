@@ -59,13 +59,13 @@ function MenuCafe({ links, products, title, mobileMenu, toggleMobileMenu, basket
                         </Main>
                         <ShopWrap>
                             <h1>{title}</h1>
-                            <Shop>
+                            {products && <Shop>
                                 {products.map(product => {
                                     return (
                                         <CardProductContainer key={product.id + product.title} product={product} />
                                     )
                                 })}
-                            </Shop>
+                            </Shop>}
                         </ShopWrap>
                     </Wraper>
                 </Container>

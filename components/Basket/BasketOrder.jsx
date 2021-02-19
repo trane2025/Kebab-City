@@ -233,12 +233,17 @@ const WraperTitle = styled.div`
 
     i {
         cursor: pointer;
+        display: none;
     }
 
     @media (max-width: 1000px) {
+        
         margin-bottom: 20px;
         h3 {
             font-size: 36px;
+        }
+        i {
+            display: block;
         }
     }
 

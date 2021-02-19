@@ -51,7 +51,7 @@ function BasketContainer({ open, basketToggle, products, setProductBasket, delet
 
     const addCountPortion = (product) => {
 
-        const selectedPortion = +product.selectedPortion + +product.min_portion;
+        const selectedPortion = +product.selectedPortion + +product.portion;
 
         const newProduct = {
             ...product,
@@ -71,7 +71,7 @@ function BasketContainer({ open, basketToggle, products, setProductBasket, delet
 
         if (product.selectedPortion > +product.min_portion) {
 
-            const selectedPortion = +product.selectedPortion - +product.min_portion;
+            const selectedPortion = +product.selectedPortion - +product.portion;
 
             const newProduct = {
                 ...product,

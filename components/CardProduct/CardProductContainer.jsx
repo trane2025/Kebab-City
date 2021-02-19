@@ -4,7 +4,7 @@ import { setProductBasket } from '../../store/redusers/basket';
 import CardProduct from './CardProduct';
 
 
-function CardProductContainer({ product, setProductBasket, setAnimate }) {
+function CardProductContainer({ product, setProductBasket }) {
 
     const BASKET_KEY = `${product.id}-${product.title}`;
 
@@ -25,12 +25,12 @@ function CardProductContainer({ product, setProductBasket, setAnimate }) {
     }
 
     const addCountPortion = () => {
-        setSelectedPortion(pre => pre + +product.min_portion);
+        setSelectedPortion(pre => pre + +product.portion);
     }
 
     const removeCountPortion = () => {
         if (selectedPortion > +product.min_portion) {
-            setSelectedPortion(pre => pre - +product.min_portion);
+            setSelectedPortion(pre => pre - +product.portion);
         }
     }
 
@@ -44,7 +44,9 @@ function CardProductContainer({ product, setProductBasket, setAnimate }) {
             minPortion={selectedPortion}
             addProductBasket={addProductBasket}
             addCountPortion={addCountPortion}
-            removeCountPortion={removeCountPortion} />
+            removeCountPortion={removeCountPortion}
+            volume={product.volume}
+            price_volume={product.price_volume} />
     )
 }
 
