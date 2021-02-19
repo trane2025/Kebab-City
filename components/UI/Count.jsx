@@ -35,6 +35,8 @@ export default Count;
 
 const CountUnit = styled.div`
     user-select: none;
+    display: flex;
+    flex-direction: column;
     .wraper-count {
         background-color: rgb(255, 255, 255);
         border-radius: 5px;
