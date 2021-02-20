@@ -10,7 +10,7 @@ import { useEffect, useState, useRef } from 'react';
 const links = [
     { label: 'Главная', href: '/' },
     { label: 'Меню', href: '/menu-cafe' },
-    { label: 'О кафе', href: '#' },
+    { label: 'О кафе', href: '/about' },
     { label: 'Доставка шашлыка', href: '/#how-delivery' },
     { label: 'Условия доставки', href: '/#terms-delivery' },
     { label: 'Контакты', href: '/#contact' },

@@ -62,6 +62,10 @@ const Left = styled.div`
         font-style: italic;
     }
 
+    h2 {
+            margin-bottom: 30px;
+        }
+
     @media (max-width: 1250px) {
         justify-content: flex-start;
         h2 {

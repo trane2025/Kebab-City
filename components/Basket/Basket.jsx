@@ -41,7 +41,10 @@ function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, 
                             </div>
 
                             <WraperPrice>
-                                <p className='price'>{`${product.selectedPrice} руб`}</p>
+                                <Price>
+                                    <span>{`Цена за ${product.price_volume}`}</span>
+                                    {`${product.price} ₽`}
+                                </Price>
                                 <i onClick={() => deleteProduct(product.key)}>
                                     <img src="/images/icons/delete.svg" alt="delete" />
                                 </i>
@@ -54,8 +57,7 @@ function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, 
 
             {!!Object.keys(products).length ?
                 <WraperAllPrice>
-                    <h3>Сумма <span className='title-price'>{`${numberWithSpaces(allPrice)} руб.`}</span></h3>
-                    <Button href='/order' top='30px' onClick={() => basketToggle(false)}>Оформить заказ</Button>
+                    <Button href='/order' top='0' onClick={() => basketToggle(false)}>Оформить заказ</Button>
                 </WraperAllPrice>
 
                 :
@@ -70,10 +72,31 @@ function Basket({ open, basketToggle, products, deleteProduct, addCountPortion, 
 
 export default Basket;
 
+const Price = styled.p`
+    margin-right: 15px;
+    color: white;
+    font-weight: 800;
+    font-size: 24px;
+    width: 120px;
+    
+
+    span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #dfdfdf;
+        display: block;
+        margin-bottom: 7px;
+    }
+    
+    @media (max-width: 660px) {
+        font-size: 18px;
+    }
+`;
+
 const WraperPrice = styled.div`
     display: flex;
     align-items: center;
-    padding: 12px;
+    padding-left: 30px;
 
     .price {
         color: white;
@@ -86,9 +109,7 @@ const WraperPrice = styled.div`
         margin-top: 10px;
         background: #2b2b35;
         justify-content: center;
-        .price {
-            
-        }
+        
     }
 `;
 
@@ -112,7 +133,7 @@ const Product = styled.div`
     ul {
         display: flex;
         align-items: center;
-        margin-left: 12px;
+        margin-left: 15px;
     }
 
     
@@ -121,7 +142,7 @@ const Product = styled.div`
         
         font-size: 16px;
         color: #dbdbdb;
-        width: 120px;
+        width: 100px;
         margin-right: 10px;
     }
 

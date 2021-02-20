@@ -41,7 +41,10 @@ function BasketOrder({ open, basketToggle, products, deleteProduct, addCountPort
                             </div>
 
                             <WraperPrice>
-                                <p className='price'>{`${product.selectedPrice} руб`}</p>
+                                <Price>
+                                    <span>{`Цена за ${product.price_volume}`}</span>
+                                    {`${product.price} ₽`}
+                                </Price>
                                 <i onClick={() => deleteProduct(product.key)}>
                                     <img src="/images/icons/delete.svg" alt="delete" />
                                 </i>
@@ -52,12 +55,7 @@ function BasketOrder({ open, basketToggle, products, deleteProduct, addCountPort
 
             </ContainerProduct>
 
-            {!!Object.keys(products).length ?
-                <WraperAllPrice>
-                    <h3>Сумма <span className='title-price'>{`${numberWithSpaces(allPrice)} руб.`}</span></h3>
-                </WraperAllPrice>
-
-                :
+            {!Object.keys(products).length &&
                 <NoneProducts>
                     <h3>Опс...  Корзина пуста =(</h3>
                 </NoneProducts>
@@ -69,10 +67,31 @@ function BasketOrder({ open, basketToggle, products, deleteProduct, addCountPort
 
 export default BasketOrder;
 
+const Price = styled.p`
+    margin-right: 15px;
+    color: white;
+    font-weight: 800;
+    font-size: 24px;
+    width: 120px;
+    
+
+    span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #dfdfdf;
+        display: block;
+        margin-bottom: 7px;
+    }
+    
+    @media (max-width: 660px) {
+        font-size: 18px;
+    }
+`;
+
 const WraperPrice = styled.div`
     display: flex;
     align-items: center;
-    padding: 12px;
+    padding-left: 30px;
 
     .price {
         color: white;
@@ -120,7 +139,7 @@ const Product = styled.div`
         
         font-size: 16px;
         color: #dbdbdb;
-        width: 120px;
+        width: 100px;
         margin-right: 10px;
     }
 

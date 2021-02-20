@@ -16,7 +16,7 @@ function CardProduct({ picture, title, price, unit, portion, minPortion, addProd
                     <Count countPortion={minPortion} unit={unit} removeCountPortion={removeCountPortion} addCountPortion={addCountPortion} />
                     <Price>
                         <span>{`Цена за ${price_volume}`}</span>
-                        {`${price} руб.`}
+                        {`${price} ₽`}
                     </Price>
                 </li>
                 {volume !== '' &&
@@ -51,7 +51,8 @@ const Volume = styled.p`
 const Price = styled.p`
     color: white;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 24px;
+    text-align: end;
     
 
     span {
@@ -59,7 +60,7 @@ const Price = styled.p`
         font-weight: 400;
         color: #dfdfdf;
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 7px;
     }
     
 `;
@@ -103,7 +104,7 @@ const Card = styled.li`
     }
 
     ul {
-        padding: 0px 30px;
+        padding: 0px 20px;
         margin-bottom: 10px;
     }
 

@@ -7,7 +7,7 @@ function Count({ unit, removeCountPortion, countPortion, addCountPortion }) {
 
     return (
         <CountUnit>
-            <label>{`Кол-во ${unit}.`}</label>
+            <label>{`Кол-во ${unit}`}</label>
             <div className="wraper-count">
                 <div className="count-btn" onClick={removeCountPortion}>
                     <svg
