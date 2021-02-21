@@ -9,13 +9,13 @@ function TermsOfDelivery() {
                 <WrapLeft>
                     <CardLeft>
                         <h4>Минимальный заказ <span >от 1 килограмма</span></h4>
-                        <p>Вы — любитель жареного мяса? Тогда вам может прийтись по душе яркий фейерверк вкусов. </p>
+                        <p>На дом можно заказать шашлык минимум на 1 кг </p>
                         <h2>01</h2>
                         <img src="/images/terms-of-delivery/left-card-light.png" alt="light" />
                     </CardLeft>
                     <CardLeft>
                         <h4>Бесплатная доставка <span>от 3 килограмм</span></h4>
-                        <p>Любитель жареного мяса? Тогда вам может прийтись по душе  вкусов. </p>
+                        <p>При заказе от 3 000 кг доставка бесплатная. </p>
                         <h2>02</h2>
                         <img src="/images/terms-of-delivery/left-card-light.png" alt="light" />
                     </CardLeft>
