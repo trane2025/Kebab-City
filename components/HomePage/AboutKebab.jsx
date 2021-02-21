@@ -4,9 +4,9 @@ import SwiperSlider from '../Slider/SwiperSlider';
 import Button from '../UI/ButtonLink';
 
 const slides = [
-    { href: '/images/about-kebab/image1.jpg' },
-    { href: 'https://eda.yandex/images/1380157/39625e140ebb0bff476372085b5da8cb-1100x825.jpg' },
-    { href: 'https://stroydesign24.ru/pics/shashlik-v-tandire-otzivi.jpg' },
+    { href: '/video/WhatsApp Video 2021-02-21 at 22.49.23.mp4', teg: 'video' },
+    { href: '/video/WhatsApp Video 2021-02-21 at 22.49.19.mp4', teg: 'video' },
+    { href: '/images/about-kebab/image1.jpg', teg: 'img' },
 ]
 
 function AboutKebab() {

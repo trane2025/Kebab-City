@@ -7,7 +7,7 @@ function SuccessOrder() {
             <WraperOrder>
                 <h2>Ваша заявка <span className='titleOrder-style'>принята!</span></h2>
                 <p>Наш оператор свяжется с Вами для уточнения деталей заказа</p>
-                <Button href={'/'}>Хорошо жду звонка</Button>
+                <Button href={'/'}>Хорошо. Жду звонка</Button>
             </WraperOrder>
         </Section>
     )

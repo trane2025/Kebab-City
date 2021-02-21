@@ -198,47 +198,13 @@ const NoneProducts = styled.div`
     background: #1d1d25;
 `;
 
-const WraperAllPrice = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    max-height: 20%;
-    min-height: 20%;
-
-    .title-price {
-        color: #f7d38c;
-    }
-
-    @media (max-width: 1000px){
-        margin-top: 20px;
-        
-        width: 100%;
-        height: 100%;
-        -webkit-box-pack: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 15px;
-
-        h3 {
-            font-size: 36px;
-        }
-    }
-
-    @media (max-width: 660px) {
-        margin-bottom: 20px;
-        h3 {
-            font-size: 30px;
-        }
-    }
-`;
 
 const ContainerProduct = styled.div`
     overflow-y: scroll;
     max-height: 500px;
 
     @media (max-width: 1000px){
-        max-height: 70%;
+        max-height: 80%;
     }
 `;
 
