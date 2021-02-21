@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Layout from '../components/layout/Layout';
 import OrderLayout from '../components/Order/OrderLayout';
-import { basketToggle } from '../store/redusers/basket';
+import { basketToggle, clearBasket } from '../store/redusers/basket';
 
 
-function order({ basketToggle, products, countProducts }) {
+function order({ basketToggle, products, countProducts, clearBasket }) {
 
     const [productsBasket, setProductsBasket] = useState({});
 
@@ -17,7 +17,11 @@ function order({ basketToggle, products, countProducts }) {
 
     return (
         <Layout basket>
-            <OrderLayout productsBasket={productsBasket} countProducts={countProducts} basketToggle={basketToggle} />
+            <OrderLayout
+                productsBasket={productsBasket}
+                countProducts={countProducts}
+                basketToggle={basketToggle}
+                clearBasket={clearBasket} />
         </Layout>
     )
 }
@@ -27,5 +31,5 @@ const mapStateToProps = (state) => ({
     countProducts: state.basket.countProducts
 })
 
-export default connect(mapStateToProps, { basketToggle })(order);
+export default connect(mapStateToProps, { basketToggle, clearBasket })(order);
 

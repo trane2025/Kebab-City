@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function CheckBox({ children, method, name, checkBoxArr }) {
+function CheckBox({ children, method, name, checkBoxArr, activeCheckBox }) {
     return (
         <RadioContainer>
 
@@ -11,7 +11,7 @@ function CheckBox({ children, method, name, checkBoxArr }) {
                 {checkBoxArr.map((item, index) => {
                     return (
                         <RadioItem key={`${index}-${item.id}-${name}`}>
-                            <input name={name} type='radio' id={item.id} defaultChecked={item.defaultChecked} />
+                            <input name={name} type='radio' id={item.id} defaultChecked={item.label === activeCheckBox} />
                             <label htmlFor={item.id} onClick={() => { method(item.label) }}><span>{item.label}</span></label>
                         </RadioItem>
                     )

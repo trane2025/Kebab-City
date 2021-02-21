@@ -28,4 +28,8 @@ const PageAboutUs = styled.section`
     background: url('/images/background/back.jpg') repeat-y center center;
     background-color: #101114;
     padding: 100px 0;
+
+    @media (max-width: 760px) {
+        padding: 50px 0;
+    }
 `;

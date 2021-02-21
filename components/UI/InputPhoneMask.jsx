@@ -9,6 +9,7 @@ const InputPhoneMask = (props) => (
             mask={['+', '7', ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
             placeholder={props.placeholder}
             onChange={props.onChange}
+            value={props.value}
 
         />
     </InputStyle>

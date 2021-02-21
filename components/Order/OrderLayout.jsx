@@ -1,5 +1,6 @@
-import { useEffect, useReducer } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import styled from 'styled-components';
+import { rootAPI } from '../../Api/rootApi';
 import BasketContainer from '../Basket/BasketContainer';
 import Button from '../UI/Button';
 import CheckBox from '../UI/CheckBox';
@@ -7,9 +8,10 @@ import Container from '../UI/Container';
 import Input from '../UI/Input';
 import InputPhoneMask from '../UI/InputPhoneMask';
 import Select from '../UI/Select';
+import SuccessOrder from '../UI/SuccessOrder';
 import TextArea from '../UI/TextArea';
 
-import reduser, { setHowDelivery, setName, setPhone, setAddress, setPickUpAddress, setComment, setProducts } from './reduser';
+import reduser, { setHowDelivery, setName, setPhone, setAddress, setPickUpAddress, setComment, setProducts, setInitialState } from './reduser';
 
 
 
@@ -23,7 +25,9 @@ const initialState = {
     products: {}
 }
 
-function OrderLayout({ productsBasket, countProducts, basketToggle }) {
+function OrderLayout({ productsBasket, countProducts, basketToggle, clearBasket }) {
+
+    const [success, setSuccess] = useState(false);
 
     useEffect(() => {
         dispatch(setProducts(productsBasket));
@@ -40,17 +44,52 @@ function OrderLayout({ productsBasket, countProducts, basketToggle }) {
         dispatch(setPickUpAddress(value));
     }
 
-    const postOrder = (event) => {
+    const postOrder = async (event) => {
         event.preventDefault();
 
-        console.log(state);
+
+
+        const userData = {
+            phone: state.phone,
+            howDelivery: state.howDelivery,
+            name: state.name,
+            comment: state.comment,
+            address_cafe: state.pickUpAddress,
+            address_delivery: state.addressDelivery,
+            comment: state.comment,
+        }
+
+        const products = Object.keys(state.products).map(key => {
+            const product = state.products[key];
+            return product;
+        })
+
+        const order = {
+            products,
+            ...userData,
+
+        }
+
+        const postOrder = await rootAPI.postDelivery(JSON.stringify(order));
+
+        console.log(postOrder);
+
+        if (postOrder === 1) {
+            dispatch(setInitialState(initialState));
+            clearBasket();
+            setSuccess(true);
+        }
+        else alert('Заказ не отправлен');
+
+
+
     }
 
 
     return (
         <Section>
+            {success && <SuccessOrder />}
             <Container>
-
                 <FlexContainer>
                     <form onSubmit={event => postOrder(event)}>
                         <h2>Оформление заказа</h2>
@@ -75,8 +114,8 @@ function OrderLayout({ productsBasket, countProducts, basketToggle }) {
                                     checkBoxArr={[
                                         { id: 'delivery', label: 'Доставка', defaultChecked: true, },
                                         { id: 'your-self', label: 'Самовывоз', defaultChecked: false }
-                                    ]
-                                    }
+                                    ]}
+                                    activeCheckBox={state.howDelivery}
                                     method={onChangehowDelivery}
 
                                 >Как вы хотите получить заказ ?</CheckBox>

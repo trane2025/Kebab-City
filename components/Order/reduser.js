@@ -5,6 +5,7 @@ const SET_ADDRESS = 'SET_ADDRESS';
 const SET_PICK_UP_ADDRESS = 'SET_PICK_UP_ADDRESS';
 const SET_COMMENT = 'SET_COMMENT';
 const SET_PPRODUCTS = 'SET_PPRODUCTS';
+const SET_INITIAL_STATE = 'SET_INITIAL_STATE';
 
 
 const reduser = (state, action) => {
@@ -44,6 +45,10 @@ const reduser = (state, action) => {
                 ...state,
                 products: action.obj
             }
+        case SET_INITIAL_STATE:
+            return {
+                ...action.obj
+            }
         default:
             return state
     }
@@ -58,3 +63,4 @@ export const setAddress = (value) => ({ type: SET_ADDRESS, value })
 export const setPickUpAddress = (value) => ({ type: SET_PICK_UP_ADDRESS, value })
 export const setComment = (value) => ({ type: SET_COMMENT, value })
 export const setProducts = (obj) => ({ type: SET_PPRODUCTS, obj })
+export const setInitialState = (obj) => ({ type: SET_INITIAL_STATE, obj })

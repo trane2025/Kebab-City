@@ -1,6 +1,7 @@
 const BASKET_TOGGLE = 'BASKET_TOGGLE';
 const SET_PRODUCT_BASKET = 'SET_PRODUCT_BASKET';
 const DELETE_PRODUCT = 'DELETE_PRODUCT';
+const CLEAR_BASKET = 'CLEAR_BASKET';
 
 
 const initialState = {
@@ -37,6 +38,8 @@ const basket = (state = initialState, action) => {
                 countPrice: setCount(action.obj),
                 countProducts: setCountProducts(action.obj)
             }
+        case CLEAR_BASKET:
+            return initialState;
 
         default: return state
     }
@@ -47,6 +50,7 @@ export default basket;
 export const basketToggle = (value) => ({ type: BASKET_TOGGLE, value });
 export const setProductBasket = (obj) => ({ type: SET_PRODUCT_BASKET, obj });
 export const deleteProductBasket = (obj) => ({ type: DELETE_PRODUCT, obj });
+export const clearBasket = () => ({ type: CLEAR_BASKET });
 
 
 

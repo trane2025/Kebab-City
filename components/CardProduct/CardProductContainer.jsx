@@ -6,8 +6,6 @@ import CardProduct from './CardProduct';
 
 function CardProductContainer({ product, setProductBasket }) {
 
-    console.log(product);
-
     const BASKET_KEY = `${product.id}-${product.title}`;
 
     const [selectedPortion, setSelectedPortion] = useState(+product.min_portion);

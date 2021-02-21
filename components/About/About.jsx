@@ -27,10 +27,21 @@ const Section = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 150px;
-    
+    position: relative;
+
+
     span {
         color: #f7c77e;
     }
+
+    @media (max-width: 1250px) {
+            display: block;
+            margin-bottom: 100px;
+        }
+
+        @media (max-width: 1000px) {
+            margin-bottom: 60px;
+        }
 `;
 
 const ImageWraper = styled.div` 
@@ -39,14 +50,30 @@ const ImageWraper = styled.div`
     height: 500px;
     overflow: hidden;
     margin-top: 30px;
+
+    @media (max-width: 1250px) {
+            position: absolute;
+            margin: 0;
+            right: 0;
+            width: 50%;
+            height: 87%;
+    }
+
+    @media (max-width: 760px) {
+        display: none;
+    }
+
 `;
 
 const LeftWraper = styled.div`
     
-
-    h2 {
-        
+    @media (max-width: 1250px) {
+        h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
     }
+    
 `;
 
 const RightWraper = styled.div`
@@ -62,5 +89,27 @@ const RightWraper = styled.div`
     p {
         width: 400px;
         margin: 15px 0;
+    }
+
+    @media (max-width: 1250px) {
+        padding: 20px;
+    }
+
+    @media (max-width: 1000px) {
+        p {
+            font-size: 14px;
+            width: 230px;
+        }
+    }
+
+    @media (max-width: 760px) {
+        h3 {
+            width: 200px;
+            font-style: italic;
+        }
+        p {
+            font-size: 14px;
+            width: 230px;
+        }
     }
 `;

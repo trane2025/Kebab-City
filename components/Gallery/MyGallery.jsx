@@ -57,6 +57,7 @@ const SectionGallery = styled.div`
     display: flex;
     margin: -15px;
     flex-wrap: wrap;
+    justify-content: center;
 
 `;
 
